@@ -88,7 +88,7 @@ jobs:
           # на сервере и в docker-compose.yml не указывать версию
           tags: zvuchi/taski_backend:latest
 
-    frontend_tests:
+  frontend_tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -130,8 +130,8 @@ jobs:
         with:
           context: ./frontend/
           push: true
-          tags: zvuchi/taski_frontend:latest
-    build_gateway_and_push_to_docker_hub:
+          tags: username/taski_frontend:latest
+  build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
     runs-on: ubuntu-latest
     steps:
@@ -150,4 +150,4 @@ jobs:
           context: ./gateway/
           push: true
           # Тут вместо username должен быть ваш логин на Docker Hub
-          tags: zvuchi/taski_gateway:latest
+          tags: username/taski_gateway:latest
